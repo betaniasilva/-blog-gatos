@@ -1,0 +1,312 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+
+  --hue: 222;
+  --cor-backgroud: hsla(var(--hue), 91%, 25%, 1);
+  --cor-text-black: hsla(var(--hue), 40%, 60%, 5);
+  --cor-text-white: hsla(0, 0%, 100%, 1);
+  --cor-opacity: hsla(0, 0%, 60%, 0.2);
+}
+
+html,
+body,
+input {
+  font-family: "Mulish", sans-serif;
+}
+
+header {
+  background-color: var(--cor-backgroud);
+}
+
+.container {
+  max-width: 1216px;
+  margin: 0 auto;
+}
+
+.navegacao {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 1.6rem 2.8rem;
+}
+
+.navegacao form {
+  width: 100%;
+}
+
+.input-wrapper {
+  width: 100%;
+}
+
+.input-wrapper label {
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  color: var(--cor-text-black);
+}
+
+.input-wrapper input {
+  width: 100%;
+  height: 16px;
+  padding: 1.9rem;
+  background-color: var(--cor-opacity);
+  border: 0;
+  border-radius: 0.6rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.input-wrapper input::placeholder {
+  color: var(--cor-text-white);
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.4rem;
+}
+.icon {
+  width: 4rem;
+  height: 4rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+main {
+  grid-area: B;
+  max-width: 800px;
+  margin: 0 auto;
+  animation: slidein 3s forwards;
+}
+
+main img {
+  margin: auto;
+  max-width: 100%;
+  flex-shrink: 0;
+  animation: zoomin 3s forwards;
+}
+
+main p {
+  max-width: 100%;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%;
+  padding: 0 2.2rem;
+  animation: slidein 3s forwards;
+}
+
+.titulo-main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  padding: 0 2.2rem;
+  margin: 3.2rem 0;
+}
+
+.buttons {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+}
+.img-btn {
+  margin: 0;
+  width: 16px;
+  height: 16px;
+}
+
+.botao {
+  display: flex;
+  padding: 12px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--cor-backgroud);
+  width: 40px;
+  height: 40px;
+}
+
+aside div {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2.2rem;
+  animation: fadein 3s forwards;
+}
+
+aside h1 {
+  margin-top: 3.4rem;
+  margin-bottom: 3.2rem;
+  font-family: Mulish;
+  font-size: 2.4rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 3.8rem;
+  padding: 0 2.2rem;
+}
+
+.card {
+  margin-bottom: 3.2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.card img {
+  animation: zoomin 3s forwards;
+}
+
+.conteudo-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+  padding: 0;
+}
+
+.conteudo-card h3 {
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.conteudo-card p {
+  font-size: 1.1rem;
+  font-style: normal;
+  font-weight: 400;
+  width: 100%;
+  padding: 0;
+  line-height: 2rem;
+}
+
+.card-container {
+  max-width: 384px;
+  padding: 0 2.4rem 0 2.2rem;
+}
+
+footer {
+  padding: 16px;
+  background-color: var(--cor-backgroud);
+  width: 100%;
+}
+
+footer p {
+  color: var(--cor-text-white);
+  text-align: center;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+@media (min-width: 700px) {
+  #page {
+    display: grid;
+    grid-template-areas:
+      "A A A"
+      "B B C"
+      "D D D";
+  }
+
+  header {
+    grid-area: A;
+  }
+
+  .navegacao {
+    padding: 1.6rem 10.8rem;
+  }
+
+  main {
+    grid-area: B;
+    padding: 4.4rem 1.7rem 4.4rem 10.8rem;
+  }
+
+  main .titulo-main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+  }
+
+  main p {
+    padding: 0;
+  }
+
+  main img {
+    margin: auto;
+    width: 100%;
+  }
+
+  .titulo-main {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  aside {
+    grid-area: C;
+    width: 100%;
+    padding: 4.4rem 10.8rem 4.4rem 1.7rem;
+  }
+  aside div {
+    max-width: 384px;
+  }
+
+  .conteudo-card p {
+    font-size: 1.4rem;
+    width: 217px;
+  }
+
+  .conteudo-card {
+  }
+
+  .conteudo-card h3 {
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 2.56rem;
+  }
+
+  footer {
+    grid-area: D;
+  }
+}
+
+@keyframes slidein {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomin {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
